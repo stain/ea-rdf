@@ -56,11 +56,11 @@ public class RDFTriple implements Triple {
 			if (str2.startsWith("\"")) {
 				int end = str2.lastIndexOf("^");
 				if (end < 0 || end < str2.lastIndexOf("\"")) { 
-					return new EOString.Missing();
+					return (IRI) new EO.Missing();
 				}
-				return str.subSequence(end, str.length());
+				return new IRIString(str.subSequence(end, str.length()));
 			}
-			return new IRI.Missing();			
+			return (IRI) new EO.Missing();			
 		}
 
 	}
